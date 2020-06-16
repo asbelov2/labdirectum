@@ -1,31 +1,65 @@
-﻿using System;
-using System.Timers;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.VisualBasic;
+﻿//-----------------------------------------------------------------------
+// <copyright file="RemindMeeting.cs" company="CompanyName">
+//     Company copyright tag.
+// </copyright>
+//-----------------------------------------------------------------------
 
 namespace ConsoleApp2
 {
-    class RemindMeeting : Meeting, IRemind
-    {
-        public Timer remindTimer;
-        public RemindMeeting(DateTime begin, DateTime end) : base(begin,end)
+    using System;
+    using System.Timers;
+
+    /// <summary>
+    /// Class that responsible for reminder time
+    /// </summary>
+    public class RemindMeeting : Meeting, IRemind
+    {   
+        /// <summary>
+        /// Timer that check remind time every minute
+        /// </summary>
+        private Timer remindTimer;
+
+        /// <summary>
+        /// Initializes a new instance of the RemindMeeting class
+        /// </summary>
+        /// <param name="begin">Begin of the meeting</param>
+        /// <param name="end">End of the meeting</param>
+        public RemindMeeting(DateTime begin, DateTime end) : base(begin, end)
         {
-            remindTimer = new Timer(TimeSpan.FromMinutes(1).TotalMilliseconds);
-            remindTimer.Elapsed += remindTimer_Tick;
-            remindTimer.Start();
-            RemindTime = Begin.Subtract(TimeSpan.FromMinutes(5));
+            this.remindTimer = new Timer(TimeSpan.FromMinutes(1).TotalMilliseconds);
+            this.remindTimer.Elapsed += this.RemindTimer_Tick;
+            this.remindTimer.Start();
+            this.RemindTime = Begin.Subtract(TimeSpan.FromMinutes(5));
         }
-        private void remindTimer_Tick(object sender, EventArgs e)
+
+        /// <summary>
+        /// Remind event handler
+        /// </summary>
+        /// <param name="message">Remind message</param>
+        public delegate void RemindHandler(string message);
+
+        /// <summary>
+        /// Remind event
+        /// </summary>
+        public event RemindHandler Remind;
+
+        /// <summary>
+        /// Gets or sets time when the reminder will be triggered
+        /// </summary>
+        public DateTime RemindTime { get; set; }
+
+        /// <summary>
+        /// Method responsible for checking remind time
+        /// </summary>
+        /// <param name="sender">Object that send</param>
+        /// <param name="e">Event arguments</param>
+        private void RemindTimer_Tick(object sender, EventArgs e)
         {
-            if (RemindTime <= DateTime.Now)
+            if (this.RemindTime <= DateTime.Now)
             {
-                Remind?.Invoke("The time has come");
-                remindTimer.Stop();
+                this.Remind?.Invoke("The time has come");
+                this.remindTimer.Stop();
             }
         }
-        public DateTime RemindTime { get; set;}
-        public delegate void RemindHandler(string message);
-        public event RemindHandler Remind;
     }
 }

@@ -15,6 +15,8 @@ namespace ConsoleApp2
         /// <summary>
         /// Initializes a new instance of the Meeting class
         /// </summary>
+        /// <param name="begin">Begin of the meeting</param>
+        /// <param name="end">End of the meeting</param>
         public Meeting(DateTime begin, DateTime end)
         {
             this.Begin = begin;

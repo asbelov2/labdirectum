@@ -7,11 +7,15 @@
 namespace ConsoleApp2
 {
     using System;
-    interface IRemind
+
+    /// <summary>
+    /// Remind interface
+    /// </summary>
+    public interface IRemind
     {
         /// <summary>
         /// Gets or sets time when the reminder will be triggered
         /// </summary>
-        DateTime RemindTime {get; set;}
+        DateTime RemindTime { get; set; }
     }
 }
