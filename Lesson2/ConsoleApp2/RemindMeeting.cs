@@ -53,7 +53,7 @@ namespace ConsoleApp2
         /// </summary>
         /// <param name="sender">Object that send</param>
         /// <param name="e">Event arguments</param>
-        private void RemindTimer_Tick(object sender, EventArgs e)
+        private void RemindTimer_Tick(object sender, EventArgs e) // StyleCop это пропустил, так что пускай, но подчёркиваний в названиях лучше избегать.
         {
             if (this.RemindTime <= DateTime.Now)
             {

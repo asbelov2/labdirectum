@@ -21,7 +21,7 @@ namespace ConsoleApp2
         {
             this.Begin = begin;
             this.End = end;
-            this.Duration = this.End - this.Begin;
+            this.Duration = this.End - this.Begin;  // Лучше вычислять в геттере. Я же могу изменить Begin или End не через конструктор.
         }
 
         /// <summary>
