@@ -27,7 +27,7 @@ namespace ConsoleApp2
         public RemindMeeting(DateTime begin, DateTime end) : base(begin, end)
         {
             this.remindTimer = new Timer(TimeSpan.FromMinutes(1).TotalMilliseconds);
-            this.remindTimer.Elapsed += this.RemindTimer_Tick;
+            this.remindTimer.Elapsed += this.RemindTimerTick;
             this.remindTimer.Start();
             this.RemindTime = Begin.Subtract(TimeSpan.FromMinutes(5));
         }
@@ -53,7 +53,7 @@ namespace ConsoleApp2
         /// </summary>
         /// <param name="sender">Object that send</param>
         /// <param name="e">Event arguments</param>
-        private void RemindTimer_Tick(object sender, EventArgs e)
+        private void RemindTimerTick(object sender, EventArgs e)
         {
             if (this.RemindTime <= DateTime.Now)
             {

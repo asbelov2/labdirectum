@@ -21,7 +21,6 @@ namespace ConsoleApp2
         {
             this.Begin = begin;
             this.End = end;
-            this.Duration = this.End - this.Begin;
         }
 
         /// <summary>
@@ -37,6 +36,12 @@ namespace ConsoleApp2
         /// <summary>
         /// Gets duration of meeting
         /// </summary>
-        public TimeSpan Duration { get; }
+        public TimeSpan Duration 
+        { 
+            get
+            {
+                return this.End - this.Begin;
+            } 
+        }
     }
 }
