@@ -5,13 +5,8 @@
     /// <summary>
     /// Ring class
     /// </summary>
-    public class Ring : Round
+    public class Ring : Shape
     {
-        /// <summary>
-        /// Field for inner radius
-        /// </summary>
-        private double innerRadius;
-
         /// <summary>
         /// Initializes a new instance of the Ring class
         /// </summary>
@@ -19,29 +14,28 @@
         /// <param name="y">Y coordinate</param>
         /// <param name="outerRadius">Outer radius</param>
         /// <param name="innerRadius">Inner radius</param>
-        public Ring(double x, double y, double outerRadius, double innerRadius) : base(x, y, outerRadius)
+        public Ring(double x, double y, double outerRadius, double innerRadius) : base(x, y)
         {
-            this.InnerRadius = innerRadius;
+            if (innerRadius < outerRadius)
+            {
+                this.OuterRadius = outerRadius;
+                this.InnerRadius = innerRadius;
+            }
+            else
+            {
+                throw new Exception("Wrong ring parameters (inner radius more than outer).");
+            }
         }
 
         /// <summary>
         /// Gets or sets inner radius
         /// </summary>
-        public double InnerRadius 
-        { 
-            get
-            {
-                return this.innerRadius;
-            }
+        public double InnerRadius { get; set; }
 
-            set
-            {
-                if (value < this.Radius)
-                {
-                    this.innerRadius = value;
-                }
-            }
-        }
+        /// <summary>
+        /// Gets or sets outer radius
+        /// </summary>
+        public double OuterRadius { get; set; }
 
         /// <summary>
         /// Calculating area of the ring
@@ -51,7 +45,7 @@
         {
             get
             {
-                return Math.PI * (Math.Pow(this.Radius, 2) - Math.Pow(this.InnerRadius, 2));
+                return Math.PI * (Math.Pow(this.OuterRadius, 2) - Math.Pow(this.InnerRadius, 2));
             }
         }
 
@@ -63,7 +57,7 @@
         {
             get
             {
-                return 2 * Math.PI * this.Radius;
+                return 2 * Math.PI * this.OuterRadius;
             }
         }
     }
