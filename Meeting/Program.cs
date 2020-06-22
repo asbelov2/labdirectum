@@ -3,7 +3,7 @@
 //     Company copyright tag.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace ConsoleApp2
+namespace Meeting
 {
     using System;
 
@@ -18,8 +18,10 @@ namespace ConsoleApp2
         /// <param name="args"> Arguments of a program </param>
         public static void Main(string[] args)
         {
-            RemindMeeting meeting = new RemindMeeting(DateTime.Now.AddMinutes(5.25), DateTime.Now.AddMinutes(10));
-            meeting.Remind += DisplayMessage;
+            ////RemindMeeting meeting = new RemindMeeting(DateTime.Now.AddMinutes(5.25), DateTime.Now.AddMinutes(10), TimeSpan.FromSeconds(10));
+            RemindMeetingCreator reminder = new RemindMeetingCreator(TimeSpan.FromSeconds(30));
+            Meeting meeting = reminder.CreateMeeting(DateTime.Now.AddSeconds(90), DateTime.Now.AddMinutes(2));
+            ((RemindMeeting)meeting).Remind += DisplayMessage;
             char exit = 'n';
             while (exit != 'y' && exit != 'Y')
             {

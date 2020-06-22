@@ -4,7 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace ConsoleApp2
+namespace Meeting
 {
     using System;
     using System.Timers;
@@ -24,12 +24,13 @@ namespace ConsoleApp2
         /// </summary>
         /// <param name="begin">Begin of the meeting</param>
         /// <param name="end">End of the meeting</param>
-        public RemindMeeting(DateTime begin, DateTime end) : base(begin, end)
+        /// <param name="timeBeforeBegin"> Time before beginning for remind </param>
+        public RemindMeeting(DateTime begin, DateTime end, TimeSpan timeBeforeBegin) : base(begin, end)
         {
             this.remindTimer = new Timer(TimeSpan.FromMinutes(1).TotalMilliseconds);
             this.remindTimer.Elapsed += this.RemindTimerTick;
             this.remindTimer.Start();
-            this.RemindTime = Begin.Subtract(TimeSpan.FromMinutes(5));
+            this.RemindTime = Begin.Subtract(timeBeforeBegin);
         }
 
         /// <summary>

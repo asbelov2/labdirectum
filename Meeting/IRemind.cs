@@ -4,7 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace ConsoleApp2
+namespace Meeting
 {
     using System;
 

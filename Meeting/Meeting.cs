@@ -3,7 +3,7 @@
 //     Company copyright tag.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace ConsoleApp2
+namespace Meeting
 {
     using System;
 
