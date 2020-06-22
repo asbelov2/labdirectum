@@ -21,8 +21,11 @@ namespace Meeting
             ////RemindMeeting meeting = new RemindMeeting(DateTime.Now.AddMinutes(5.25), DateTime.Now.AddMinutes(10), TimeSpan.FromSeconds(10));
             RemindMeetingCreator reminder = new RemindMeetingCreator(TimeSpan.FromSeconds(30));
             Meeting meeting = reminder.CreateMeeting(DateTime.Now.AddSeconds(90), DateTime.Now.AddMinutes(2));
+            EndlessMeeting endlessMeeting = new EndlessMeeting(DateTime.Now.AddDays(2));
+            Console.WriteLine(endlessMeeting.Begin);
             ((RemindMeeting)meeting).Remind += DisplayMessage;
             char exit = 'n';
+            exit = (char)Console.Read();
             while (exit != 'y' && exit != 'Y')
             {
                 Console.Clear();
