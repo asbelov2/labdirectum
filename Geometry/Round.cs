@@ -3,7 +3,8 @@
     /// <summary>
     /// Round class
     /// </summary>
-    public abstract class Round : Shape
+    public abstract class Round : Shape   // Round - круг. Circle - окружность. Спишем на неполноту постановки задачи.
+                                          // Но даже если Round у тебя окружность, он не должен быть абстрактным.
     {
         /// <summary>
         /// Initializes a new instance of the Round class
