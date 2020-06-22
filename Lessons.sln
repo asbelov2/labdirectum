@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geometry", "Geometry\Geomet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meeting", "Meeting\Meeting.csproj", "{BED62DF7-C48B-4501-BC01-076E0D8DBEBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSet", "DataSet\DataSet.csproj", "{39DE019A-7D31-4435-8318-485F281C1B7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BED62DF7-C48B-4501-BC01-076E0D8DBEBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BED62DF7-C48B-4501-BC01-076E0D8DBEBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BED62DF7-C48B-4501-BC01-076E0D8DBEBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39DE019A-7D31-4435-8318-485F281C1B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39DE019A-7D31-4435-8318-485F281C1B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39DE019A-7D31-4435-8318-485F281C1B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39DE019A-7D31-4435-8318-485F281C1B7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
