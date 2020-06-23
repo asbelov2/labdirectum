@@ -1,57 +1,86 @@
 ﻿namespace DateAndNumbersFormat
 {
     using System;
-    using System.Data;
+    using System.Globalization;
 
+    /// <summary>
+    /// Format of real numbers
+    /// </summary>
+    public enum NumberFormatType
+    {
+        /// <summary>
+        /// Defualt presentation of number
+        /// </summary>
+        Default = 0,
+
+        /// <summary>
+        /// Number with dot as delimiter
+        /// </summary>
+        Dot = 1,
+
+        /// <summary>
+        /// Number with E in the end
+        /// </summary>
+        Exp = 2,
+
+        /// <summary>
+        /// Numbers separeted by ',' every 3 digits in integer part
+        /// </summary>
+        Bank = 3
+    }
+
+    /// <summary>
+    /// Format of date
+    /// </summary>
     public enum DateFormatType
     {
         /// <summary>
-        /// 13.03.1993
+        /// Looks like 13.03.1993
         /// </summary>
         OnlyNumbers = 1,
 
         /// <summary>
-        /// 13.03.93
+        /// Looks like 13.03.93
         /// </summary>
         OnlyNumbersShort = 2,
 
         /// <summary>
-        /// 13 March 1993
+        /// Looks like 13 March 1993
         /// </summary>
         WithWords = 3,
 
         /// <summary>
-        /// 13 Mar 1993
+        /// Looks like 13 Mar 1993
         /// </summary>
         WithWordsShort = 4,
 
         /// <summary>
-        /// 03.13.1996
+        /// Looks like 03.13.1996
         /// </summary>
         USNumbers = 5,
-        
+
         /// <summary>
-        /// March 13, 1993
+        /// Looks like March 13, 1993
         /// </summary>
         USWords = 6,
-        
+
         /// <summary>
-        /// 1993.03.13
+        /// Looks like 1993.03.13
         /// </summary>
         ChinaNumber = 7,
 
         /// <summary>
-        /// 13 March 1993 17:04:43
+        /// Looks like 13 March 1993 17:04:43
         /// </summary>
         DateWithTime = 8,
 
         /// <summary>
-        /// 17:04:43
+        /// Looks like 17:04:43
         /// </summary>
         OnlyTime = 9,
 
         /// <summary>
-        /// 13.03.1993 17:04:43
+        /// Looks like 13.03.1993 17:04:43
         /// </summary>
         DateWithTimeShort = 10
     }
@@ -67,9 +96,16 @@
         /// <param name="args">Aruguments of program</param>
         public static void Main(string[] args)
         {
-            for(int i = 1; i <= 10; i++)
+            for (int i = 1; i <= 10; i++)
             {
                 Console.WriteLine(FormatDate(DateTime.Now, (DateFormatType)i));
+            }
+
+            Console.WriteLine();
+
+            for (int i = 0; i <= 3; i++)
+            {
+                Console.WriteLine(FormatNumber(1234567890.1234, (NumberFormatType)i));
             }
         }
 
@@ -81,7 +117,7 @@
         /// <returns>Formated date</returns>
         public static string FormatDate(DateTime date, DateFormatType ftype)
         {
-            string result = "";
+            string result = string.Empty;
             switch (ftype)
             {
                 case DateFormatType.OnlyNumbers:
@@ -115,12 +151,35 @@
                     result = date.ToString("G");
                     break;
             }    
+
             return result;
         }
 
-        public static string FormatNumber()
+        /// <summary>
+        /// Present number in needed format
+        /// </summary>
+        /// <param name="number">Target number</param>
+        /// <param name="ftype">Type of format</param>
+        /// <returns>Formated string</returns>
+        public static string FormatNumber(double number, NumberFormatType ftype)
         {
-            string result = "";
+            string result = string.Empty;
+            switch (ftype)
+            {
+                case NumberFormatType.Dot:
+                    result = number.ToString(CultureInfo.InvariantCulture);
+                    break;
+                case NumberFormatType.Exp:
+                    result = number.ToString("0.####E+0");
+                    break;
+                case NumberFormatType.Bank:
+                    result = number.ToString("0,0.###", CultureInfo.InvariantCulture);
+                    break;
+                default:
+                    result = number.ToString();
+                    break;
+            }
+
             return result;
         }
     }
