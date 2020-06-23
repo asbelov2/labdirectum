@@ -14,7 +14,7 @@
         public static void Main(string[] args)
         {
             Ring bigRing = new Ring(1, 5, 20, 17);
-            Console.WriteLine("Ring:\n \tOuter radius: " + bigRing.Radius
+            Console.WriteLine("Ring:\n \tOuter radius: " + bigRing.OuterRadius
                             + "\n\tInner radius: " + bigRing.InnerRadius
                             + "\n\tArea: " + bigRing.Area
                             + "\n\tPerimeter: " + bigRing.Perimeter);
