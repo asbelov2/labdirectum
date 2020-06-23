@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringTest", "StringTest\StringTest.csproj", "{73A33E01-3188-48B2-839F-0FD00428B995}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringEqual", "StringEqual\StringEqual.csproj", "{872B8AFA-45D5-4D9C-84E7-F2E2FE200145}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{73A33E01-3188-48B2-839F-0FD00428B995}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73A33E01-3188-48B2-839F-0FD00428B995}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73A33E01-3188-48B2-839F-0FD00428B995}.Release|Any CPU.Build.0 = Release|Any CPU
+		{872B8AFA-45D5-4D9C-84E7-F2E2FE200145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{872B8AFA-45D5-4D9C-84E7-F2E2FE200145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{872B8AFA-45D5-4D9C-84E7-F2E2FE200145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{872B8AFA-45D5-4D9C-84E7-F2E2FE200145}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
