@@ -1,9 +1,8 @@
 ﻿namespace StringTest
 {
     using System;
-    using System.Text;
-    using System.Threading;
     using System.Diagnostics;
+    using System.Text;
 
     /// <summary>
     /// Main class
@@ -16,25 +15,25 @@
         /// <param name="args">Aruguments of program</param>
         public static void Main(string[] args)
         {
-            string A = string.Empty;
-            StringBuilder B = new StringBuilder(string.Empty);
+            string a = string.Empty;
+            StringBuilder b = new StringBuilder(string.Empty);
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
-            for(int i=0;i<100000;i++)
+            for (int i = 0; i < 100000; i++)
             {
-                A = A + "abc";
+                a += "abc";
             }
+
             stopWatch.Stop();
             Console.WriteLine(stopWatch.Elapsed);
             stopWatch.Restart();
             for (int i = 0; i < 100000; i++)
             {
-                B.Append("abc");
+                b.Append("abc");
             }
+
             stopWatch.Stop();
             Console.WriteLine(stopWatch.Elapsed);
-
-
         }
     }
 }
