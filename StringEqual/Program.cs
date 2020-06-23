@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace StringEqual
+﻿namespace StringEqual
 {
+    using System;
+
     /// <summary>
     /// Main class
     /// </summary>
@@ -14,6 +14,7 @@ namespace StringEqual
         public static void Main(string[] args)
         {
             Console.WriteLine(new StringValue("AAA").Equals(new StringValue("AAA")));
+            Console.WriteLine(new StringValue("AAA") == new StringValue("AAA"));
         }
     }
 }
