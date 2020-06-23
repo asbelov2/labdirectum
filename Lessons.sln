@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geometry", "Geometry\Geomet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meeting", "Meeting\Meeting.csproj", "{BED62DF7-C48B-4501-BC01-076E0D8DBEBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSet", "DataSet\DataSet.csproj", "{39DE019A-7D31-4435-8318-485F281C1B7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataSet", "DataSet\DataSet.csproj", "{39DE019A-7D31-4435-8318-485F281C1B7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rights", "Rights\Rights.csproj", "{E65A8499-214B-48C2-97B6-38385E832F0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rights", "Rights\Rights.csproj", "{E65A8499-214B-48C2-97B6-38385E832F0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateAndNumbersFormat", "DateAndNumbersFormat\DateAndNumbersFormat.csproj", "{AFA01CE8-6D47-4202-A377-5D92DE56FEB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateAndNumbersFormat", "DateAndNumbersFormat\DateAndNumbersFormat.csproj", "{AFA01CE8-6D47-4202-A377-5D92DE56FEB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{52A38091-7720-470C-8F7D-2DF8C414CD3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{AFA01CE8-6D47-4202-A377-5D92DE56FEB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFA01CE8-6D47-4202-A377-5D92DE56FEB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFA01CE8-6D47-4202-A377-5D92DE56FEB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52A38091-7720-470C-8F7D-2DF8C414CD3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52A38091-7720-470C-8F7D-2DF8C414CD3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52A38091-7720-470C-8F7D-2DF8C414CD3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52A38091-7720-470C-8F7D-2DF8C414CD3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
