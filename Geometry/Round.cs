@@ -15,7 +15,6 @@
         /// <param name="radius">Radius of round</param>
         public Round(double x, double y, double radius) : base(x, y, radius)
         {
-            this.Radius = radius;
         }
 
         /// <summary>

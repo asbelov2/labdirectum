@@ -24,6 +24,11 @@
                             + "\n\tArea: " + smallCircle.Area
                             + "\n\tPerimeter: " + smallCircle.Perimeter);
 
+            Round commonRound = new Round(10, 10, 10);
+            Console.WriteLine("Circle:\n \tRadius: " + commonRound.Radius
+                            + "\n\tArea: " + commonRound.Area
+                            + "\n\tPerimeter: " + commonRound.Perimeter);
+
             Square square = new Square(-1, 9, 5.6);
             Console.WriteLine("Square:\n \tSide: " + square.Width 
                             + "\n\tArea: " + square.Area
@@ -36,12 +41,12 @@
                             + "\n\tPerimeter: " + doubleSquare.Perimeter);
 
             Triangle rightTriangle = new Triangle(0, 0, 4, 3, 5);
-            Console.WriteLine("Triangleangle:\n \tSide A: " + rightTriangle.SideA
+            Console.WriteLine("Triangle:\n \tSide A: " + rightTriangle.SideA
                             + "\n\tSide B: " + rightTriangle.SideB
                             + "\n\tSide C: " + rightTriangle.SideC
-                            + "\n\tAngle between A and B: " + rightTriangle.AngleAB
-                            + "\n\tAngle between B and C: " + rightTriangle.AngleBC
-                            + "\n\tAngle between A and C: " + rightTriangle.AngleCA
+                            + "\n\tAngle between A and B: " + rightTriangle.AngleAB.ToString("0.000 Pi")
+                            + "\n\tAngle between B and C: " + rightTriangle.AngleBC.ToString("0.000 Pi")
+                            + "\n\tAngle between A and C: " + rightTriangle.AngleCA.ToString("0.000 Pi")
                             + "\n\tArea: " + rightTriangle.Area
                             + "\n\tPerimeter: " + rightTriangle.Perimeter);
         }
