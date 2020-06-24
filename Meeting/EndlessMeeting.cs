@@ -15,6 +15,9 @@
         {
         }
 
+        /// <summary>
+        /// Gets meeting duration
+        /// </summary>
         public new TimeSpan Duration 
         {
             get
