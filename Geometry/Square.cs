@@ -10,8 +10,8 @@
         /// </summary>
         /// <param name="x">X coordinate</param>
         /// <param name="y">Y coordinate</param>
-        /// <param name="width">Width of rectangle</param>
-        public Square(double x, double y, double width) : base(x, y, width, width)
+        /// <param name="side">Width of square</param>
+        public Square(double x, double y, double side) : base(x, y, side, side)
         {
         }
     }

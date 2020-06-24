@@ -13,13 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rights", "Rights\Rights.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateAndNumbersFormat", "DateAndNumbersFormat\DateAndNumbersFormat.csproj", "{AFA01CE8-6D47-4202-A377-5D92DE56FEB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{52A38091-7720-470C-8F7D-2DF8C414CD3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logger", "Logger\Logger.csproj", "{52A38091-7720-470C-8F7D-2DF8C414CD3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringTest", "StringTest\StringTest.csproj", "{73A33E01-3188-48B2-839F-0FD00428B995}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringTest", "StringTest\StringTest.csproj", "{73A33E01-3188-48B2-839F-0FD00428B995}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringEqual", "StringEqual\StringEqual.csproj", "{872B8AFA-45D5-4D9C-84E7-F2E2FE200145}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringEqual", "StringEqual\StringEqual.csproj", "{872B8AFA-45D5-4D9C-84E7-F2E2FE200145}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComplexNumber", "ComplexNumber\ComplexNumber.csproj", "{6F679541-6B48-4200-B1F9-613918B46D65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComplexNumber", "ComplexNumber\ComplexNumber.csproj", "{6F679541-6B48-4200-B1F9-613918B46D65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogMethod", "LogMethod\LogMethod.csproj", "{32A4A21C-2E82-47DF-92CA-DC522044A3ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{6F679541-6B48-4200-B1F9-613918B46D65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F679541-6B48-4200-B1F9-613918B46D65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F679541-6B48-4200-B1F9-613918B46D65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32A4A21C-2E82-47DF-92CA-DC522044A3ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32A4A21C-2E82-47DF-92CA-DC522044A3ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32A4A21C-2E82-47DF-92CA-DC522044A3ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32A4A21C-2E82-47DF-92CA-DC522044A3ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
