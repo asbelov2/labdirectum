@@ -25,7 +25,7 @@
                             + "\n\tPerimeter: " + smallCircle.Perimeter);
 
             Round commonRound = new Round(10, 10, 10);
-            Console.WriteLine("Circle:\n \tRadius: " + commonRound.Radius
+            Console.WriteLine("Round:\n \tRadius: " + commonRound.Radius
                             + "\n\tArea: " + commonRound.Area
                             + "\n\tPerimeter: " + commonRound.Perimeter);
 
