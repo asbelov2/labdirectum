@@ -31,9 +31,19 @@
 
             Rectangle doubleSquare = new Rectangle(10, 20, 11.2, 5.6);
             Console.WriteLine("Rectangle:\n \tWidth: " + doubleSquare.Width
-                            + "\n\tHeight" + doubleSquare.Height
+                            + "\n\tHeight: " + doubleSquare.Height
                             + "\n\tArea: " + doubleSquare.Area
                             + "\n\tPerimeter: " + doubleSquare.Perimeter);
+
+            Triangle rightTriangle = new Triangle(0, 0, 4, 3, 5);
+            Console.WriteLine("Triangleangle:\n \tSide A: " + rightTriangle.SideA
+                            + "\n\tSide B: " + rightTriangle.SideB
+                            + "\n\tSide C: " + rightTriangle.SideC
+                            + "\n\tAngle between A and B: " + rightTriangle.AngleAB
+                            + "\n\tAngle between B and C: " + rightTriangle.AngleBC
+                            + "\n\tAngle between A and C: " + rightTriangle.AngleCA
+                            + "\n\tArea: " + rightTriangle.Area
+                            + "\n\tPerimeter: " + rightTriangle.Perimeter);
         }
     }
 }

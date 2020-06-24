@@ -58,7 +58,7 @@
         }
 
         /// <summary>
-        /// Gets or sets angle between A and B sides
+        /// Gets or sets angle between B and C sides
         /// </summary>
         public double AngleBC
         {
@@ -69,7 +69,7 @@
         }
 
         /// <summary>
-        /// Gets or sets angle between A and B sides
+        /// Gets or sets angle between C and A sides
         /// </summary>
         public double AngleCA
         {
