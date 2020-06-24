@@ -36,7 +36,7 @@
         {
             get
             {
-                return (2 * this.Width) + (2 * this.Height);
+                return 2 * (this.Width + this.Height);
             }
         }
 
