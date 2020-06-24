@@ -16,6 +16,8 @@
         public static void Main(string[] args)
         {
             Console.WriteLine(CountRecords("ClientConnectionLog.log", DateTime.ParseExact("04.12.2007", "dd.MM.yyyy", CultureInfo.InvariantCulture), DateTime.ParseExact("14.12.2007", "dd.MM.yyyy", CultureInfo.InvariantCulture)));
+            Test testObj = new Test(0, "b", 1, "d");
+            Console.WriteLine(testObj.ToString());
         }
 
         /// <summary>
