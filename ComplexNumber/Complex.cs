@@ -10,19 +10,32 @@
         /// <summary>
         /// Initializes a new instance of the Complex class
         /// </summary>
-        public Complex()
+        public Complex(double Re, double Im)
         {
+            this.Re = Re;
+            this.Im = Im;
         }
 
         /// <summary>
         /// Gets or sets real part
         /// </summary>
-        public double Re { get; set; }  // Лучше сделать неизменяемым. Убрать сет. Задавать через конструктор.
+        public double Re { get; private set; }
 
         /// <summary>
         /// Gets or sets imagine part
         /// </summary>
-        public double Im { get; set; }
+        public double Im { get; private set; }
+
+        /// <summary>
+        /// Gets modulus of number
+        /// </summary>
+        private double Modulus
+        {
+            get
+            {
+                return Math.Sqrt((this.Re * this.Re) + (this.Im * this.Im));
+            }
+        }
 
         /// <summary>
         /// Compare method for complex numbers
@@ -31,7 +44,7 @@
         /// <returns>Positive if this object more than other, Negative if less, 0 if they are equal</returns>
         public int CompareTo(Complex other)
         {
-            return Math.Sign(Math.Sqrt((this.Re * this.Re) + (this.Im * this.Im)) - Math.Sqrt((other.Re * other.Re) + (other.Im * other.Im)));  // Лучше сделать свойство с вычислением абсолютного значения.
+            return Math.Sign(this.Modulus - other.Modulus);
         }
 
         /// <summary>
@@ -41,13 +54,12 @@
         /// <returns>Positive if this object more than other, Negative if less, 0 if they are equal</returns>
         public int CompareTo(object obj)
         {
-            if (this.GetType() != obj.GetType())  // Более правильная проверка: obj is Complex
+            if (obj is Complex value)
             {
-                throw new ArgumentException("Not complex number");
-            }
+                return this.CompareTo(value);
 
-            return this.CompareTo((Complex)obj);  // Либо можно даже obj is Complex value. И value передавать в CompareTo в if конструкции.
-                                                  // А исключение бросать после if'а.
+            }
+            throw new ArgumentException("Not complex number");
         }
     }
 }

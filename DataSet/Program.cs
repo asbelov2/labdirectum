@@ -28,19 +28,18 @@
         public string Method(DataSet data, char recordDelimiter, char columnDelimiter)
         {
             StringBuilder result = new StringBuilder();
-            foreach (DataTable dt in data.Tables) // Немного спорная ситуация. Здесь понятно что такое dt, но это всё ещё не говорящее название переменной.
-                                                  // Может всё же назвать table?
+            foreach (DataTable table in data.Tables)
             {
-                result.Append(dt.TableName + "\n");
+                result.Append(table.TableName + "\n");
 
-                foreach (DataColumn column in dt.Columns)
+                foreach (DataColumn column in table.Columns)
                 {
                     result.Append(columnDelimiter + column.ColumnName);
                 }
 
                 result.Append('\n');
 
-                foreach (DataRow row in dt.Rows)
+                foreach (DataRow row in table.Rows)
                 {
                     var cells = row.ItemArray;
                     foreach (object cell in cells)

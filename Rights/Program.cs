@@ -76,38 +76,38 @@
         /// <param name="rights">Right flags</param>
         public static void ShowRights(AccessRights rights)
         {
-            if ((rights & AccessRights.AccessDenied) != 0)  // Лучше проверять через rights.HasFlag(AccessRights.AccessDenied)
+            if (rights.HasFlag(AccessRights.AccessDenied))
             {
                 Console.Write("Access denied\n");
                 return;
             }
 
-            if ((rights & AccessRights.View) != 0)
+            if (rights.HasFlag(AccessRights.View))
             {
                 Console.Write("View ");
             }
 
-            if ((rights & AccessRights.Run) != 0)
+            if (rights.HasFlag(AccessRights.Run))
             {
                 Console.Write("Run ");
             }
 
-            if ((rights & AccessRights.Add) != 0)
+            if (rights.HasFlag(AccessRights.Add))
             {
                 Console.Write("Add ");
             }
 
-            if ((rights & AccessRights.Edit) != 0)
+            if (rights.HasFlag(AccessRights.Edit))
             {
                 Console.Write("Edit ");
             }
 
-            if ((rights & AccessRights.Ratify) != 0)
+            if (rights.HasFlag(AccessRights.Ratify))
             {
                 Console.Write("Ratify ");
             }
 
-            if ((rights & AccessRights.Delete) != 0)
+            if (rights.HasFlag(AccessRights.Delete))
             {
                 Console.Write("Delete");
             }

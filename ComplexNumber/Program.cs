@@ -16,8 +16,8 @@
         {
             var twoComplexes = new ArrayList() 
             { 
-                new Complex() { Re = 3, Im = 5 },
-                new Complex() { Re = 2, Im = 2 } 
+                new Complex(3,5),
+                new Complex(2,2) 
             };
             twoComplexes.Sort();
         }

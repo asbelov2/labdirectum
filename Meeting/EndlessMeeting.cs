@@ -15,6 +15,12 @@
         {
         }
 
-        // Ещё было бы не плохо переопределить Duration.
+        public new TimeSpan Duration 
+        {
+            get
+            {
+                return TimeSpan.MaxValue;
+            } 
+        }
     }
 }

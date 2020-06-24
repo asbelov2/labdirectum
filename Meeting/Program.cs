@@ -23,6 +23,7 @@ namespace Meeting
             Meeting meeting = reminder.CreateMeeting(DateTime.Now.AddSeconds(90), DateTime.Now.AddMinutes(2));
             EndlessMeeting endlessMeeting = new EndlessMeeting(DateTime.Now.AddDays(2));
             Console.WriteLine(endlessMeeting.Begin);
+            Console.WriteLine(endlessMeeting.Duration);
             ((RemindMeeting)meeting).Remind += DisplayMessage;
             char exit = 'n';
             exit = (char)Console.Read();
