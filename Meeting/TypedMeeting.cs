@@ -10,7 +10,7 @@
         /// <summary>
         /// Type of the meeting
         /// </summary>
-        private MeetingType type;
+        private MeetingType type; // Лушче сделать свойством только для чтения, чтобы его можно было посмотреть из вне.
 
         /// <summary>
         /// Initializes a new instance of the TypedMeeting class

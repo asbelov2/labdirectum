@@ -14,5 +14,7 @@
         public EndlessMeeting(DateTime begin) : base(begin, DateTime.MaxValue)
         {
         }
+
+        // Ещё было бы не плохо переопределить Duration.
     }
 }

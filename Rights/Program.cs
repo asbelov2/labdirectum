@@ -76,7 +76,7 @@
         /// <param name="rights">Right flags</param>
         public static void ShowRights(AccessRights rights)
         {
-            if ((rights & AccessRights.AccessDenied) != 0)
+            if ((rights & AccessRights.AccessDenied) != 0)  // Лучше проверять через rights.HasFlag(AccessRights.AccessDenied)
             {
                 Console.Write("Access denied\n");
                 return;

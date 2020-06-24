@@ -15,7 +15,7 @@
         /// <param name="args">Aruguments of program</param>
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello World!");  // Если будет время, то лучше продемонстрировать работу метода.
         }
 
         /// <summary>
@@ -28,7 +28,8 @@
         public string Method(DataSet data, char recordDelimiter, char columnDelimiter)
         {
             StringBuilder result = new StringBuilder();
-            foreach (DataTable dt in data.Tables)
+            foreach (DataTable dt in data.Tables) // Немного спорная ситуация. Здесь понятно что такое dt, но это всё ещё не говорящее название переменной.
+                                                  // Может всё же назвать table?
             {
                 result.Append(dt.TableName + "\n");
 
