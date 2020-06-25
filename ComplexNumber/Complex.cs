@@ -19,12 +19,12 @@
         /// <summary>
         /// Gets or sets real part
         /// </summary>
-        public double Re { get; private set; }
+        public double Re { get; }
 
         /// <summary>
         /// Gets or sets imagine part
         /// </summary>
-        public double Im { get; private set; }
+        public double Im { get; }
 
         /// <summary>
         /// Gets modulus of number

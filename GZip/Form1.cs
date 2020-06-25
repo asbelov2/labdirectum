@@ -24,17 +24,25 @@
         {
             RichTextBox richTextBox = new RichTextBox();
             richTextBox.Dock = DockStyle.Fill;
-            Decompress("q2.rtf.gz", richTextBox);
+            this.Decompress("q2.rtf.gz", richTextBox);
             this.Controls.Add(richTextBox);
 
             this.InitializeComponent();
         }
+
+        /// <summary>
+        /// Decopressing .gz RTF in RichTextBox
+        /// </summary>
+        /// <param name="compressedFile">Path to .gz file</param>
+        /// <param name="target">RichTextBox target element</param>
         public void Decompress(string compressedFile, RichTextBox target)
         {
             using (var sourceStream = new FileStream(compressedFile, FileMode.Open, FileAccess.Read, FileShare.Read))
             using (var uncompressedStream = new GZipStream(sourceStream, CompressionMode.Decompress, true))
             using (var textReader = new StreamReader(uncompressedStream, true))
+            {
                 target.Rtf = textReader.ReadToEnd();
+            }
         }
     }
 }
