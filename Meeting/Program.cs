@@ -13,7 +13,7 @@ namespace Meeting
     public class Program
     {
         /// <summary>
-        /// Main function
+        ///  The main entry point for the application.
         /// </summary>
         /// <param name="args"> Arguments of a program </param>
         public static void Main(string[] args)

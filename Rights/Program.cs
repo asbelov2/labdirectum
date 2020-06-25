@@ -54,7 +54,7 @@
     public class Program
     {
         /// <summary>
-        /// Main method
+        ///  The main entry point for the application.
         /// </summary>
         /// <param name="args">Aruguments of program</param>
         public static void Main(string[] args)
