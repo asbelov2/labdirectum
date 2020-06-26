@@ -9,7 +9,7 @@
     using System.IO.Compression;
     using System.Linq;
     using System.Text;
-    using System.Threading.Tasks;
+    using System.Threading.Tasks; // Лишние using'и.
     using System.Windows.Forms;
 
     /// <summary>
