@@ -38,8 +38,8 @@
         public void Decompress(string compressedFile, RichTextBox target)
         {
             using (var sourceStream = new FileStream(compressedFile, FileMode.Open, FileAccess.Read, FileShare.Read))
-            using (var uncompressedStream = new GZipStream(sourceStream, CompressionMode.Decompress, true))
-            using (var textReader = new StreamReader(uncompressedStream, true))
+            using (var decompressStream = new GZipStream(sourceStream, CompressionMode.Decompress, true))
+            using (var textReader = new StreamReader(decompressStream, true))
             {
                 target.Rtf = textReader.ReadToEnd();
             }
