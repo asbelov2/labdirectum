@@ -33,11 +33,16 @@
             using (StreamReader streamReader = new StreamReader(fileName))
             {
                 DateTime date = begin;
-                string line = streamReader.ReadLine();  // Не сразу понятно, почему пропускается 1 строка.
-                while (!(streamReader.EndOfStream || date > end)) // Лучше пробежать файл до конца.
+                string line;
+                while (!streamReader.EndOfStream)
                 {
                     line = streamReader.ReadLine();
-                    if (DateTime.TryParseExact(line.Substring(0, "dd.MM.yyyy\thh:mm:ss".Length), "dd.MM.yyyy\tHH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out date))  // Строка уходит за пределы экрана. Лучше часть вынести, чтобы лучше читалась.
+                    if (DateTime.TryParseExact(
+                        line.Substring(0, "dd.MM.yyyy\thh:mm:ss".Length),
+                        "dd.MM.yyyy\tHH:mm:ss", 
+                        CultureInfo.InvariantCulture, 
+                        DateTimeStyles.None, 
+                        out date))
                     {
                         if ((date >= begin) && (date < end))
                         {
