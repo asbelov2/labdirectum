@@ -1,6 +1,7 @@
 ﻿namespace ComplexNumber
 {
     using System;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Main class
@@ -13,6 +14,19 @@
         /// <param name="args">Aruguments of program</param>
         public static void Main(string[] args)
         {
+            List<string> someList = new List<string>() { "3", "222", "11", "4444", string.Empty, "55" };
+            Dictionary<int, string> someDictionary = new Dictionary<int, string>() { { 0, "12" }, { 1, "54" }, { 2, "4346" } };
+            foreach (string item in someList)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine();
+            foreach (KeyValuePair<int, string> item in someDictionary)
+            {
+                Console.WriteLine(item.Key + ". " + item.Value);
+            }
+
             Console.WriteLine(Max("1", "22", "333"));
         }
 
