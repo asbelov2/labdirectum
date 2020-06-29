@@ -1,5 +1,6 @@
 ﻿namespace GZip
 {
+    using System;
     using System.IO;
     using System.IO.Compression;
     using System.Windows.Forms;
@@ -29,11 +30,22 @@
         /// <param name="target">RichTextBox target element</param>
         public void Decompress(string compressedFile, RichTextBox target)
         {
-            using (var sourceStream = new FileStream(compressedFile, FileMode.Open, FileAccess.Read, FileShare.Read))
-            using (var decompressStream = new GZipStream(sourceStream, CompressionMode.Decompress, true))
-            using (var textReader = new StreamReader(decompressStream, true))
+            try
             {
-                target.Rtf = textReader.ReadToEnd();
+                using (var sourceStream = new FileStream(compressedFile, FileMode.Open, FileAccess.Read, FileShare.Read))
+                using (var decompressStream = new GZipStream(sourceStream, CompressionMode.Decompress, true))
+                using (var textReader = new StreamReader(decompressStream, true))
+                {
+                    target.Rtf = textReader.ReadToEnd();
+                }
+            }
+            catch(FileNotFoundException ex)
+            {
+                throw new LoadFileException(ex);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                throw new LoadFileException(ex);
             }
         }
     }
