@@ -23,7 +23,7 @@
         /// <param name="first">First value</param>
         /// <param name="second">Second value</param>
         /// <returns>Max value</returns>
-        public static T Max<T>(T first, T second) where T : IComparable
+        public static T Max<T>(T first, T second) where T : IComparable<T>
         {
             return (first.CompareTo(second) > 0) ? first : second;
         }
@@ -36,7 +36,7 @@
         /// <param name="second">Second value</param>
         /// <param name="third">Third value</param>
         /// <returns>Max value</returns>
-        public static T Max<T>(T first, T second, T third) where T : IComparable
+        public static T Max<T>(T first, T second, T third) where T : IComparable<T>
         {
             return Max<T>(Max<T>(first, second), third);
         }
