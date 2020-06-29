@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComplexNumber", "ComplexNum
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogMethod", "LogMethod\LogMethod.csproj", "{32A4A21C-2E82-47DF-92CA-DC522044A3ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GZip", "GZip\GZip.csproj", "{27E1AA6E-3302-471F-ADD9-05A30766D3F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GZip", "GZip\GZip.csproj", "{27E1AA6E-3302-471F-ADD9-05A30766D3F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maximum", "Maximum\Maximum.csproj", "{CE9FAD91-5725-4319-8F3F-443721E8B757}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{27E1AA6E-3302-471F-ADD9-05A30766D3F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27E1AA6E-3302-471F-ADD9-05A30766D3F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27E1AA6E-3302-471F-ADD9-05A30766D3F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE9FAD91-5725-4319-8F3F-443721E8B757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE9FAD91-5725-4319-8F3F-443721E8B757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE9FAD91-5725-4319-8F3F-443721E8B757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9FAD91-5725-4319-8F3F-443721E8B757}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

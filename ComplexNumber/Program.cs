@@ -1,6 +1,5 @@
 ﻿namespace ComplexNumber
 {
-    using System;
     using System.Collections;
 
     /// <summary>
