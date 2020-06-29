@@ -39,7 +39,7 @@
                     target.Rtf = textReader.ReadToEnd();
                 }
             }
-            catch(FileNotFoundException ex)
+            catch (FileNotFoundException ex)
             {
                 throw new LoadFileException(ex);
             }
