@@ -1,4 +1,4 @@
-﻿namespace ComplexNumber
+﻿namespace Maximum
 {
     using System;
     using System.Collections.Generic;
@@ -16,18 +16,32 @@
         {
             List<string> someList = new List<string>() { "3", "222", "11", "4444", string.Empty, "55" };
             Dictionary<int, string> someDictionary = new Dictionary<int, string>() { { 0, "12" }, { 1, "54" }, { 2, "4346" } };
+            Console.WriteLine("List:");
             foreach (string item in someList)
             {
                 Console.WriteLine(item);
             }
 
-            Console.WriteLine();
+            Console.WriteLine("\nDictionary:");
             foreach (KeyValuePair<int, string> item in someDictionary)
             {
                 Console.WriteLine(item.Key + ". " + item.Value);
             }
 
+            Console.WriteLine("\nMax(\"1\", \"22\", \"333\"):");
             Console.WriteLine(Max("1", "22", "333"));
+
+            Console.WriteLine("\nMax(1,333,22):");
+            Console.WriteLine(Max(1,333,22));
+
+            Console.WriteLine("\nText file:");
+            using (Text text = new Text("test.txt"))
+            {
+                foreach (var item in text)
+                {
+                    Console.WriteLine(item);
+                }
+            }
         }
 
         /// <summary>

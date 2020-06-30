@@ -1,11 +1,13 @@
 ﻿namespace GZip
 {
     using System;
+    using System.Runtime.Serialization;
 
     /// <summary>
     /// LoadFileException class
     /// </summary>
-    public class LoadFileException : Exception
+    [Serializable]
+    public sealed class LoadFileException : Exception , ISerializable
     {
         /// <summary>
         /// Initializes a new instance of the LoadFileException class
