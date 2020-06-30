@@ -34,7 +34,7 @@
             Console.WriteLine(Max("1", "22", "333"));
 
             Console.WriteLine("\nMax(1,333,22):");
-            Console.WriteLine(Max(1,333,22));
+            Console.WriteLine(Max(1, 333, 22));
 
             Console.WriteLine("\nText file:");
             using (Text text = new Text("test.txt"))
