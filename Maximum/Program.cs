@@ -2,6 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
+    using System.Threading;
 
     /// <summary>
     /// Main class
@@ -42,6 +44,14 @@
                     Console.WriteLine(item);
                 }
             }
+
+            Console.WriteLine("\nRU");
+            Console.WriteLine(strings.E_CANT_CHANGE_PASSWORD_WITH_OS_AUTHENTIFICATION);
+            Console.WriteLine(strings.DEBUGGER_MAIN_FORM_TRACE_INTO_ACTION_CAPTION);
+            Console.WriteLine("\nEN");
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
+            Console.WriteLine(strings.E_CANT_CHANGE_PASSWORD_WITH_OS_AUTHENTIFICATION);
+            Console.WriteLine(strings.DEBUGGER_MAIN_FORM_TRACE_INTO_ACTION_CAPTION);
         }
 
         /// <summary>
