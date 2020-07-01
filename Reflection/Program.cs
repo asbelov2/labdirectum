@@ -2,7 +2,9 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Reflection;
+    using System.Runtime.CompilerServices;
 
     /// <summary>
     /// Program class
@@ -15,12 +17,16 @@
         /// <param name="args">Aruguments of program</param>
         public static void Main(string[] args)
         {
-            Test test = new Test("a", "b", "c");
+            Test test = new Test("A", "B", "C", "D");
             var props = GetProperties(test);
+            Console.WriteLine("1 задание:");
             foreach (var property in props)
             {
                 Console.WriteLine(property);
             }
+
+            Console.WriteLine("\n2 задание:");
+            var obj = CreateObject(Path.Combine(Directory.GetCurrentDirectory(), "MyLib.dll"), "MyLib.Test");
 
             Console.ReadLine();
         }
@@ -44,6 +50,28 @@
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// This method create object from given assebly
+        /// </summary>
+        /// <param name="assemblyFullPath">Full path to assembly</param>
+        /// <param name="className">Class name with namespace</param>
+        /// <returns>New instance of given class</returns>
+        public static object CreateObject(string assemblyFullPath, string className)
+        {
+            var asm = Assembly.LoadFrom(assemblyFullPath);
+            Type t = asm.GetType(className, true, true);
+            PropertyInfo[] properties = t.GetProperties();
+            object obj = Activator.CreateInstance(t);
+            foreach (var property in properties)
+            {
+                if (property.CanRead)
+                {
+                    Console.WriteLine(property.GetValue(obj));
+                }
+            }
+            return obj;
         }
     }
 }

@@ -16,6 +16,12 @@
             this.Im = Im;
         }
 
+        public Complex()
+        {
+            this.Re = 0;
+            this.Im = 0;
+        }
+
         /// <summary>
         /// Gets or sets real part
         /// </summary>

@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maximum", "Maximum\Maximum.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reflection", "Reflection\Reflection.csproj", "{F5CA0A8B-4F3D-4EBE-898E-C58AE26D501F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLib", "MyLib\MyLib.csproj", "{279E367C-DE4E-4F27-BFB4-713AD341D165}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{F5CA0A8B-4F3D-4EBE-898E-C58AE26D501F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5CA0A8B-4F3D-4EBE-898E-C58AE26D501F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5CA0A8B-4F3D-4EBE-898E-C58AE26D501F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{279E367C-DE4E-4F27-BFB4-713AD341D165}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{279E367C-DE4E-4F27-BFB4-713AD341D165}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{279E367C-DE4E-4F27-BFB4-713AD341D165}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{279E367C-DE4E-4F27-BFB4-713AD341D165}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

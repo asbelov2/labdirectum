@@ -1,4 +1,4 @@
-﻿namespace Reflection
+﻿namespace MyLib
 {
     /// <summary>
     /// Test class
