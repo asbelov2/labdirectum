@@ -1,4 +1,6 @@
-﻿namespace Reflection
+﻿using System.Linq;
+
+namespace Reflection
 {
     using System;
     using System.Collections.Generic;
@@ -41,9 +43,10 @@
             Type type = obj.GetType();
             PropertyInfo[] properties = type.GetProperties();
             List<string> result = new List<string>();
+            var attrs = type.GetCustomAttributes();
             foreach (var property in properties)
             {
-                if (property.CanRead && property.CanWrite)
+                if (property.CanRead && property.CanWrite && !Attribute.IsDefined(property,typeof(ObsoleteAttribute)))
                 {
                     result.Add(property.Name);
                 }

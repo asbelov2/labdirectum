@@ -1,4 +1,6 @@
-﻿namespace MyLib
+﻿using System;
+
+namespace MyLib
 {
     /// <summary>
     /// Test class
@@ -34,6 +36,7 @@
         /// <summary>
         /// Gets or sets A
         /// </summary>
+        [Obsolete]
         public string A { get; set; }
 
         /// <summary>
