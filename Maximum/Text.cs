@@ -43,7 +43,7 @@
         /// </summary>
         public void Dispose()
         {
-            ((IDisposable)this.streamReader).Dispose();
+            ((IDisposable)this.streamReader).Dispose();   // А зачем здесь приведение?
         }
 
         /// <summary>

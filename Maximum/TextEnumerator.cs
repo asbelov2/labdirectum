@@ -8,7 +8,7 @@
     /// <summary>
     /// TextEnumerator class
     /// </summary>
-    public class TextEnumerator : IEnumerator<string>
+    public class TextEnumerator : IEnumerator<string>   // Очень уж сильно он повторяет класс Text. Ну да ладно. Пусть так.
     {
         /// <summary>
         /// Stream for text file

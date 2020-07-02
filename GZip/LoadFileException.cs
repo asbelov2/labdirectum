@@ -13,9 +13,9 @@
         /// Initializes a new instance of the LoadFileException class
         /// </summary>
         /// <param name="sourceException">Source exception</param>
-        public LoadFileException(Exception sourceException) : base(sourceException.Message)
-        {
-            this.SourceEx = sourceException;
+        public LoadFileException(Exception sourceException) : base(sourceException.Message) // Лучше использовать другой базовый конструктор, в который
+        {                                                                                   // Также передаётся innerException.
+            this.SourceEx = sourceException;                                                // Ну и тогда это свойство не понадобится.
         }
 
         /// <summary>

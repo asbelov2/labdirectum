@@ -45,8 +45,8 @@
                 }
             }
 
-            Console.WriteLine("\nRU");
-            Console.WriteLine(strings.E_CANT_CHANGE_PASSWORD_WITH_OS_AUTHENTIFICATION);
+            Console.WriteLine("\nRU");                                                    // На самом деле задание не о том, но
+            Console.WriteLine(strings.E_CANT_CHANGE_PASSWORD_WITH_OS_AUTHENTIFICATION);   // Так как оно дополнительное, я прийму это.
             Console.WriteLine(strings.DEBUGGER_MAIN_FORM_TRACE_INTO_ACTION_CAPTION);
             Console.WriteLine("\nEN");
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
