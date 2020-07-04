@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace Reflection
+﻿namespace Reflection
 {
+    using System;
+
     /// <summary>
     /// Test class
     /// </summary>

@@ -1,12 +1,11 @@
-﻿using System.Linq;
-
-namespace Reflection
+﻿namespace Reflection
 {
     using System;
     using System.Collections.Generic;
+    using System.Configuration;
+    using System.Configuration.Internal;
     using System.IO;
     using System.Reflection;
-    using System.Runtime.CompilerServices;
 
     /// <summary>
     /// Program class
@@ -30,6 +29,20 @@ namespace Reflection
             Console.WriteLine("\n2 задание:");
             var obj = CreateObject(Path.Combine(Directory.GetCurrentDirectory(), "MyLib.dll"), "MyLib.Test");
 
+            Console.WriteLine("\n4 задание:");
+
+            Configuration conf = new Configuration();
+            var settingsSection = ConfigurationManager.GetSection("ProgramSettings") as Configuration.SettingsSection;
+            Console.WriteLine("Parameters:");
+            Console.WriteLine("\tIntSetting:\t" + settingsSection.IntSetting);
+            Console.WriteLine("\tStrSetting:\t" + settingsSection.StrSetting);
+            ConfigurationElementCollection subSettingCollection = settingsSection.SubSettings;
+            Console.WriteLine("SubSettings:");
+            foreach (Configuration.SubSettingSection subSetting in subSettingCollection)
+            {
+                Console.WriteLine("\t" + subSetting.SubSetting + ":\t" + subSetting.SubSettingValue);
+            }
+
             Console.ReadLine();
         }
 
@@ -46,7 +59,7 @@ namespace Reflection
             var attrs = type.GetCustomAttributes();
             foreach (var property in properties)
             {
-                if (property.CanRead && property.CanWrite && !Attribute.IsDefined(property,typeof(ObsoleteAttribute)))
+                if (property.CanRead && property.CanWrite && !Attribute.IsDefined(property, typeof(ObsoleteAttribute)))
                 {
                     result.Add(property.Name);
                 }
@@ -74,6 +87,7 @@ namespace Reflection
                     Console.WriteLine(property.GetValue(obj));
                 }
             }
+
             return obj;
         }
     }
