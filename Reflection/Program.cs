@@ -56,7 +56,6 @@
             Type type = obj.GetType();
             PropertyInfo[] properties = type.GetProperties();
             List<string> result = new List<string>();
-            var attrs = type.GetCustomAttributes();
             foreach (var property in properties)
             {
                 if (property.CanRead && property.CanWrite && !Attribute.IsDefined(property, typeof(ObsoleteAttribute)))
