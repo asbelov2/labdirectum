@@ -1,7 +1,7 @@
 ﻿namespace ExcelMT
 {
     using System;
-    using System.Collections.Generic;
+    using System.Collections.Generic; // Лишние using.
     using System.IO;
     using System.Linq;
     using System.Text;
@@ -36,8 +36,8 @@
 
             Worksheet worksheet = excelApp.Worksheets[1];
 
-            for (int i = 2; i <= 10; i++)
-            {
+            for (int i = 2; i <= 10; i++)   // Смущает начало с 2. Вроде если начать с 1 будет чуть понятнее.
+            {                               // Чтобы было прям совсем понятно, можно вынести смещение в переменную или константу, и написать summary.
                 worksheet.Cells[i, 1] = i - 1;
                 worksheet.Cells[1, i] = i - 1;
                 for (int j = 2; j <= 10; j++)
