@@ -60,7 +60,7 @@
             {
                 if (property.CanRead && property.CanWrite && !Attribute.IsDefined(property, typeof(ObsoleteAttribute)))
                 {
-                    result.Add(property.Name);
+                    result.Add("\t" + property.Name + ":\t" + property.GetValue(obj));
                 }
             }
 
@@ -76,7 +76,7 @@
         public static object CreateObject(string assemblyFullPath, string className)
         {
             var asm = Assembly.LoadFrom(assemblyFullPath);
-            Type t = asm.GetType(className, true, true);
+            Type t = asm.GetType(className, true, false);
             PropertyInfo[] properties = t.GetProperties();
             object obj = Activator.CreateInstance(t);
             foreach (var property in properties)
