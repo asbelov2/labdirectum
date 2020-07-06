@@ -30,7 +30,7 @@
 
         public static object CreateObject(string assemblyFullPath, string className)
         {
-            var asm = Assembly.LoadFile(assemblyFullPath);
+            var asm = Assembly.LoadFrom(assemblyFullPath);    // LoadFile уже обсуждали.
             Type t = asm.GetType(className, true, true);
             PropertyInfo[] properties = t.GetProperties();
             object obj = Activator.CreateInstance(t);
@@ -38,7 +38,7 @@
             {
                 if (property.CanRead)
                 {
-                    Console.WriteLine("\t\t"+property.GetValue(obj));
+                    Console.WriteLine("\t\t"+property.GetValue(obj));   // Метод делает не то, о чём сказано в названии.
                 }
             }
 

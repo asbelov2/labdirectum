@@ -37,7 +37,7 @@ namespace MyLib
         /// Gets or sets A
         /// </summary>
         [Obsolete]
-        public string A { get; set; }
+        public string A { get; set; }   // Не лучшие названия для свойств.
 
         /// <summary>
         /// Sets B
