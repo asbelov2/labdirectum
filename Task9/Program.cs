@@ -30,7 +30,7 @@
 
         public static object CreateObject(string assemblyFullPath, string className)
         {
-            var asm = Assembly.LoadFrom(assemblyFullPath);
+            var asm = Assembly.LoadFile(assemblyFullPath);
             Type t = asm.GetType(className, true, true);
             PropertyInfo[] properties = t.GetProperties();
             object obj = Activator.CreateInstance(t);
