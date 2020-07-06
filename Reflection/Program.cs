@@ -26,11 +26,11 @@
             }
 
             Console.WriteLine("\n2 задание:");
-            var obj = CreateObject(Path.Combine(Directory.GetCurrentDirectory(), "MyLib.dll"), "MyLib.Test");
+            var obj = CreateObject(Path.Combine(Directory.GetCurrentDirectory(), "MyLib.dll"), "MyLib.Test");   // Неиспользуемая переменная. Пусть метод что-то возвращает, но не обязательно же присваивать результат какой-нибудь переменное.
 
             Console.WriteLine("\n4 задание:");
 
-            Configuration conf = new Configuration();
+            Configuration conf = new Configuration();   // Неиспользуемая переменная.
             var settingsSection = ConfigurationManager.GetSection("ProgramSettings") as Configuration.SettingsSection;
             Console.WriteLine("Parameters:");
             Console.WriteLine("\tIntSetting:\t" + settingsSection.IntSetting);
@@ -52,7 +52,7 @@
         /// <returns>Names of properties</returns>
         public static List<string> GetProperties(object obj)
         {
-            Type type = obj.GetType();
+            Type type = obj.GetType();          // Уже обсуждали var. Но это не ошибка. Так. На подумать.
             PropertyInfo[] properties = type.GetProperties();
             List<string> result = new List<string>();
             foreach (var property in properties)
