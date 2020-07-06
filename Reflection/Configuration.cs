@@ -1,7 +1,6 @@
 ﻿namespace Reflection
 {
     using System.Configuration;
-    using System.Xml;
 
     /// <summary>
     /// Configuration class
@@ -56,7 +55,7 @@
             /// <summary>
             /// IntSetting parameter
             /// </summary>
-            [ConfigurationProperty("IntSetting", IsDefaultCollection = true, IsRequired = true)]
+            [ConfigurationProperty("IntSetting", IsRequired = true)]
             public int IntSetting
             { 
                 get { return (int)this["IntSetting"]; }
@@ -65,7 +64,7 @@
             /// <summary>
             /// StrSetting parameter
             /// </summary>
-            [ConfigurationProperty("StrSetting", IsDefaultCollection = true, IsRequired = true)]
+            [ConfigurationProperty("StrSetting", IsRequired = true)]
             public string StrSetting
             {
                 get { return this["StrSetting"].ToString(); }
