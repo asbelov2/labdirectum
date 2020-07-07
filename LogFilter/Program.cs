@@ -24,6 +24,11 @@
             }
         }
 
+        /// <summary>
+        /// Sorting log by date
+        /// </summary>
+        /// <param name="path">Path to log</param>
+        /// <returns>sorted by date log</returns>
         public static List<string> GetSortedByDateLog(string path)
         {
             var text = new Text(path);
