@@ -17,7 +17,7 @@
         /// <param name="args">Aruguments of program</param>
         public static void Main(string[] args)
         {
-            Test test = new Test("A", "B", "C", "D");
+            var test = new Test("A", "B", "C", "D");
             var props = GetProperties(test);
             Console.WriteLine("1 задание:");
             foreach (var property in props)
@@ -26,7 +26,7 @@
             }
 
             Console.WriteLine("\n2 задание:");
-            var obj = CreateObject(Path.Combine(Directory.GetCurrentDirectory(), "MyLib.dll"), "MyLib.Test");   // Неиспользуемая переменная. Пусть метод что-то возвращает, но не обязательно же присваивать результат какой-нибудь переменное.
+            var obj = CreateObjectAndPrintProperties(Path.Combine(Directory.GetCurrentDirectory(), "MyLib.dll"), "MyLib.Test");   // Неиспользуемая переменная. Пусть метод что-то возвращает, но не обязательно же присваивать результат какой-нибудь переменное.
 
             Console.WriteLine("\n4 задание:");
 
@@ -52,9 +52,9 @@
         /// <returns>Names of properties</returns>
         public static List<string> GetProperties(object obj)
         {
-            Type type = obj.GetType();          // Уже обсуждали var. Но это не ошибка. Так. На подумать.
-            PropertyInfo[] properties = type.GetProperties();
-            List<string> result = new List<string>();
+            var type = obj.GetType();
+            var properties = type.GetProperties();
+            var result = new List<string>();
             foreach (var property in properties)
             {
                 if (property.CanRead && property.CanWrite && !Attribute.IsDefined(property, typeof(ObsoleteAttribute)))
@@ -72,12 +72,12 @@
         /// <param name="assemblyFullPath">Full path to assembly</param>
         /// <param name="className">Class name with namespace</param>
         /// <returns>New instance of given class</returns>
-        public static object CreateObject(string assemblyFullPath, string className)
+        public static object CreateObjectAndPrintProperties(string assemblyFullPath, string className)
         {
             var asm = Assembly.LoadFrom(assemblyFullPath);
-            Type t = asm.GetType(className, true, false);
-            PropertyInfo[] properties = t.GetProperties();
-            object obj = Activator.CreateInstance(t);
+            var t = asm.GetType(className, true, false);
+            var properties = t.GetProperties();
+            var obj = Activator.CreateInstance(t);
             foreach (var property in properties)
             {
                 if (property.CanRead)

@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task9", "Task9\Task9.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelMT", "ExcelMT\ExcelMT.csproj", "{708E3C8B-E924-454D-BCFA-9880B8B6ACDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogFilter", "LogFilter\LogFilter.csproj", "{0D9A111F-0EBB-455B-B471-17E5671E4925}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{708E3C8B-E924-454D-BCFA-9880B8B6ACDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{708E3C8B-E924-454D-BCFA-9880B8B6ACDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{708E3C8B-E924-454D-BCFA-9880B8B6ACDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D9A111F-0EBB-455B-B471-17E5671E4925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D9A111F-0EBB-455B-B471-17E5671E4925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D9A111F-0EBB-455B-B471-17E5671E4925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D9A111F-0EBB-455B-B471-17E5671E4925}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

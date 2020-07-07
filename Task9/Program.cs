@@ -16,29 +16,30 @@
         public static void Main(string[] args)
         {
             Console.WriteLine("\n5 задание:\n\tReflection1.dll:");
-            CreateObject(Path.Combine(Directory.GetCurrentDirectory(), "Reflection1.dll"), "Reflection.Test");
+            CreateObjectAndPrintProperties(Path.Combine(Directory.GetCurrentDirectory(), "Reflection1.dll"), "Reflection.Test");
             Console.WriteLine("\tReflection2.dll:");
-            CreateObject(Path.Combine(Directory.GetCurrentDirectory(), "Reflection2.dll"), "Reflection.Test");
+            CreateObjectAndPrintProperties(Path.Combine(Directory.GetCurrentDirectory(), "Reflection2.dll"), "Reflection.Test");
             Console.ReadLine();
         }
 
         /// <summary>
-        /// This method gets names of all read-write properties
+        /// This method create object from given assebly
         /// </summary>
-        /// <param name="obj">Target object</param>
-        /// <returns>Names of properties</returns>
+        /// <param name="assemblyFullPath">Full path to assembly</param>
+        /// <param name="className">Class name with namespace</param>
+        /// <returns>New instance of given class</returns>
 
-        public static object CreateObject(string assemblyFullPath, string className)
+        public static object CreateObjectAndPrintProperties(string assemblyFullPath, string className)
         {
-            var asm = Assembly.LoadFrom(assemblyFullPath);    // LoadFile уже обсуждали.
-            Type t = asm.GetType(className, true, true);
-            PropertyInfo[] properties = t.GetProperties();
-            object obj = Activator.CreateInstance(t);
+            var asm = Assembly.LoadFile(assemblyFullPath);
+            var t = asm.GetType(className, true, true);
+            var properties = t.GetProperties();
+            var obj = Activator.CreateInstance(t);
             foreach (var property in properties)
             {
                 if (property.CanRead)
                 {
-                    Console.WriteLine("\t\t"+property.GetValue(obj));   // Метод делает не то, о чём сказано в названии.
+                    Console.WriteLine("\t\t"+property.GetValue(obj));
                 }
             }
 
