@@ -105,7 +105,7 @@
 
             for (int i = 0; i <= 3; i++)
             {
-                Console.WriteLine(FormatNumber(1234567890.1234, (NumberFormatType)i));
+                Console.WriteLine(FormatNumber(1234567890.1234567890, (NumberFormatType)i));
             }
         }
 
