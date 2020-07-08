@@ -28,7 +28,7 @@
         /// </summary>
         /// <param name="path">Path to log</param>
         /// <returns>sorted by date log</returns>
-        public static List<string> GetSortedByDateLog(string path, string date)  // Не хватает фильтрации за указанную дату.
+        public static List<string> GetSortedByDateLog(string path, string date)  // Почему дата передаётся строкой?
         {
             const string datePattern = "dd.MM.yyyy hh:mm:ss";
             var text = new Text(path);
