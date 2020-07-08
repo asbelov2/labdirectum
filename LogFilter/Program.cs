@@ -3,7 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.Globalization;
-    using System.IO;    // Не используемые using'и.
     using System.Linq;
 
     /// <summary>
@@ -17,7 +16,7 @@
         /// <param name="args">Aruguments of program</param>
         public static void Main(string[] args)
         {
-            var sortedTxt = GetSortedByDateLog("Log.txt");
+            var sortedTxt = GetSortedByDateLog("Log.txt", "10.05.1965");
             foreach (var str in sortedTxt)
             {
                 Console.WriteLine(str);
@@ -29,13 +28,14 @@
         /// </summary>
         /// <param name="path">Path to log</param>
         /// <returns>sorted by date log</returns>
-        public static List<string> GetSortedByDateLog(string path)  // Не хватает фильтрации за указанную дату.
+        public static List<string> GetSortedByDateLog(string path, string date)  // Не хватает фильтрации за указанную дату.
         {
+            const string datePattern = "dd.MM.yyyy hh:mm:ss";
             var text = new Text(path);
-            DateTime date = new DateTime(); // Зачем инициализировать date?
-            var sortedLog = text            // "dd.MM.yyyy hh:mm:ss" можно вынести в константу.
-                .Where(t => DateTime.TryParseExact(t.Substring(0, "dd.MM.yyyy hh:mm:ss".Length), "dd.MM.yyyy hh:mm:ss", null, DateTimeStyles.None, out date))
-                .OrderBy(t => DateTime.Parse(t.Substring(0, "dd.MM.yyyy hh:mm:ss".Length)));
+            var sortedLog = text
+                .Where(t => DateTime.TryParseExact(t.Substring(0, datePattern.Length), datePattern, null, DateTimeStyles.None, out var date))
+                .OrderBy(t => DateTime.Parse(t.Substring(0, datePattern.Length)))
+                .Where(t => DateTime.Parse(t.Substring(0, datePattern.Length)).ToShortDateString()==date);
             return sortedLog.ToList();
         }
     }
