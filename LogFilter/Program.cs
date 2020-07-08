@@ -35,7 +35,7 @@
             var sortedLog = text
                 .Where(t => DateTime.TryParseExact(t.Substring(0, datePattern.Length), datePattern, null, DateTimeStyles.None, out var date))
                 .OrderBy(t => DateTime.Parse(t.Substring(0, datePattern.Length)))
-                .Where(t => DateTime.Parse(t.Substring(0, datePattern.Length)).ToShortDateString()==date);
+                .Where(t => DateTime.Parse(t.Substring(0, datePattern.Length)).ToShortDateString() == date);
             return sortedLog.ToList();
         }
     }
