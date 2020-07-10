@@ -1,7 +1,7 @@
 namespace Tests
 {
     using Meeting;
-    using DataSet;
+    using DataSet;    //Лишний Using.
     using DateAndNumbersFormat;
     using Logger;
     using Rights;
@@ -16,15 +16,15 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
-            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US"); // Почему мы устанавливаем культуру перед каждым тестом?
         }
 
         [Test]
         public void EndlessMeetingTest()
         {
-            var endlessMeeting = new EndlessMeeting(DateTime.MinValue);
-            Assert.IsNotNull(endlessMeeting);
-            endlessMeeting = new EndlessMeeting(DateTime.MaxValue);
+            var endlessMeeting = new EndlessMeeting(DateTime.MinValue);   // Не совсем понимаю что тут тестируется.
+            Assert.IsNotNull(endlessMeeting);                             // Конструктор в любом случае вернёт объект, если не будет исключения.
+            endlessMeeting = new EndlessMeeting(DateTime.MaxValue);       // Null точно не будет.
             Assert.IsNotNull(endlessMeeting);
         }
 
@@ -36,7 +36,7 @@ namespace Tests
         public void TypedMeetingTest(TypedMeeting.MeetingType type)
         {
             var typedMeeting = new TypedMeeting(DateTime.Now, DateTime.MaxValue, type);
-            Assert.IsNotNull(typedMeeting);
+            Assert.IsNotNull(typedMeeting);   // Лучше уж в таком случае проверять тип созданного объекта.
         }
 
         [Test]
@@ -114,8 +114,8 @@ namespace Tests
                 log.WriteString("2");
                 log.WriteString("3");
             }
-            Assert.That(
-                () => ((Logger)logref).WriteString("4"),
+            Assert.That(                                  // Такая проверка не нужна. Получается что мы тестируем конструкцию using.
+                () => ((Logger)logref).WriteString("4"),  // Лучше проверить содержимое файла.
                 Throws.Exception);
         }
 
@@ -129,7 +129,7 @@ namespace Tests
             string result = "";
             using (var writer = new StringWriter())
             {
-                Console.SetOut(writer);
+                Console.SetOut(writer);     // Супер! Учитывая исходную программу, это хороший варинт проверки.
                 Rights.Program.ShowRights(rights);
                 result = writer.GetStringBuilder().ToString();
                 writer.Flush();
